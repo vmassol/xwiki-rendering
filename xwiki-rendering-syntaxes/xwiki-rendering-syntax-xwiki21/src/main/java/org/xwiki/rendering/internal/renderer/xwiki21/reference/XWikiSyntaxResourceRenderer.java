@@ -76,7 +76,7 @@ public class XWikiSyntaxResourceRenderer
             String queryString = reference.getParameter(DocumentResourceReference.QUERY_STRING);
             if (!StringUtils.isEmpty(queryString)) {
                 printer.print(PARAMETER_SEPARATOR);
-                printer.print(this.parametersPrinter.print(QUERY_STRING, queryString, '~'));
+                printer.print(this.PARAMETERS_PRINTER.print(QUERY_STRING, queryString, '~'));
                 shouldPrintSeparator = false;
             }
             // Then print the anchor
@@ -87,14 +87,14 @@ public class XWikiSyntaxResourceRenderer
                 } else {
                     printer.print(" ");
                 }
-                printer.print(this.parametersPrinter.print(ANCHOR, anchor, '~'));
+                printer.print(this.PARAMETERS_PRINTER.print(ANCHOR, anchor, '~'));
                 shouldPrintSeparator = false;
             }
         } else if (reference.getType().equals(ResourceType.ATTACHMENT)) {
             String queryString = reference.getParameter(AttachmentResourceReference.QUERY_STRING);
             if (!StringUtils.isEmpty(queryString)) {
                 printer.print(PARAMETER_SEPARATOR);
-                printer.print(this.parametersPrinter.print(QUERY_STRING, queryString, '~'));
+                printer.print(this.PARAMETERS_PRINTER.print(QUERY_STRING, queryString, '~'));
                 shouldPrintSeparator = false;
             }
         }
@@ -106,7 +106,7 @@ public class XWikiSyntaxResourceRenderer
             } else {
                 printer.print(" ");
             }
-            printer.print(this.parametersPrinter.print(parameters, '~'));
+            printer.print(this.PARAMETERS_PRINTER.print(parameters, '~'));
         }
     }
 }
