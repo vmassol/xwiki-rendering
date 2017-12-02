@@ -26,7 +26,8 @@
 
 node {
   xwikiBuild {
-    goals = "clean"
+    goals = "clean package"
     xvnc = false
+    properties = "-N"
   }
 }
